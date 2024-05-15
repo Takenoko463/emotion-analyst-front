@@ -1,0 +1,9 @@
+{
+  "files.autoSave": "onWindowChange",
+  "json.format.enable": false,
+  "json.schemaDownload.enable": false,
+  "dotnet.highlighting.highlightRelatedJsonComponents": true,
+  "json.validate.enable": true,
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "html.format.enable": false
+}
