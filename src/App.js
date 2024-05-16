@@ -20,7 +20,7 @@ const App = () => {
     surprise: "驚き",
     love: "愛",
     excitement: "興奮",
-    cheap: "安堵",
+    calm: "安堵",
     pleasant: "快い",
   };
 
@@ -34,7 +34,7 @@ const App = () => {
     surprise: "#FFFF00",    // 黄色
     love: "#FF69B4",        // ホットピンク
     excitement: "#FFA500",  // オレンジ
-    cheap: "#00FF00",       // ライムグリーン
+    calm: "#00FF00",       // ライムグリーン
     pleasant: "#00BFFF"     // ディープスカイブルー
   };
 
