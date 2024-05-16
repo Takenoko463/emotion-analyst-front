@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "emotionanalyzer-c2d45",
+
+    "public": "build"
+  }
+}
