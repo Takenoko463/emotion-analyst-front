@@ -20,7 +20,7 @@ const App = () => {
     surprise: "驚き",
     love: "愛",
     excitement: "興奮",
-    cheap: "動じない",
+    cheap: "安堵",
     pleasant: "快い",
   };
 
