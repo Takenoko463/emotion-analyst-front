@@ -92,10 +92,6 @@ const App = () => {
     ],
   };
 
-  const chartOptions = {
-    maintainAspectRatio: false, // Aspect ratioを無効にする
-  };
-
   // すべての値が0かどうかをチェック
   const allValuesAreZero = emotions.data.every(value => value === 0);
   
