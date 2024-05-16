@@ -13,7 +13,7 @@ const App = () => {
   // 英語の感情ラベルと対応する日本語ラベルのマッピング
   const emotionLabels = {
     aware: "哀れ",
-    shape: "恥",
+    shame: "恥",
     anger: "怒り",
     unpleasant: "不快",
     fear: "恐れ",
@@ -27,7 +27,7 @@ const App = () => {
   // 感情に対応する色のマッピング
   const emotionColors = {
     aware: "#A9A9A9",       // ダークグレー
-    shape: "#FFB6C1",       // ライトピンク
+    shame: "#FFB6C1",       // ライトピンク
     anger: "#FF0000",       // 赤
     unpleasant: "#808080",  // グレー
     fear: "#8B0000",        // ダークレッド
