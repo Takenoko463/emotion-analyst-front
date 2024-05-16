@@ -82,16 +82,6 @@ const App = () => {
     return acc;
   }, { labels: [], data: [], colors: [] });
 
-  const chartData = {
-    labels: emotions.labels,
-    datasets: [
-      {
-        data: emotions.data,
-        backgroundColor: emotions.colors,
-      },
-    ],
-  };
-
   // すべての値が0かどうかをチェック
   const allValuesAreZero = emotions.data.every(value => value === 0);
   
