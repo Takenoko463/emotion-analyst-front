@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
-      <p>&copy; 就活状況共有サイト</p>
+      <p>&copy; 感情分析サイト</p>
     </footer>
   );
 }
