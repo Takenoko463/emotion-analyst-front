@@ -4,6 +4,7 @@ import { Pie } from "react-chartjs-2";
 import "bootstrap/dist/css/bootstrap.min.css"; // BootstrapのCSSをインポート
 import Button from "react-bootstrap/Button"; // React BootstrapのButtonコンポーネントをインポート
 import "chart.js/auto"; // required for chart.js v3+
+import "./EmotionAnalyzer.css"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -101,11 +102,11 @@ const EmotionAnalyzer = () => {
         <h1 className="my-5 text-center">Emotion Analysis</h1>
       </Row>
       <Row>
-        <Col md="3">
+        <Col md="4" className="my-3">
           <Form onSubmit={handleSubmit} id="form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label as="h4">分析する文章</Form.Label>
-              <Form.Control type="text" value={inputValue} onChange={handleInputChange} placeholder="文章を入力してください" />
+              <Form.Control as="textarea" rows={3} value={inputValue} onChange={handleInputChange} placeholder="文章を入力してください" />
             </Form.Group>
 
             <Button variant="primary" type="submit">
@@ -113,8 +114,8 @@ const EmotionAnalyzer = () => {
             </Button>
           </Form>
         </Col>
-        <Col md="6" className="mx-auto" id="graph">
-          <h2>Word: {data.word}</h2>
+        <Col md="6" className="mx-auto my-3" id="graph">
+          <h2>Word: <strong class="shake">{data.word}</strong></h2>
           <h3>Emotions</h3>
           {allValuesAreZero ? (
             <div>感情を特定できません</div>
