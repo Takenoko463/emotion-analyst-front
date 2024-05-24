@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button"; // React BootstrapのButtonコン�
 import "chart.js/auto"; // required for chart.js v3+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 
 const EmotionAnalyzer = () => {
   const [word, setWord] = useState("悲しい");
@@ -95,25 +96,24 @@ const EmotionAnalyzer = () => {
   const allValuesAreZero = emotions.data.every((value) => value === 0);
 
   return (
-    <div className="EmotionAnalyzer">
+    <div className="EmotionAnalyzer my-2">
       <Row>
-        <h1 className="my-1 text-center">Emotion Analysis</h1>
+        <h1 className="my-5 text-center">Emotion Analysis</h1>
       </Row>
       <Row>
-        <Col md="2">
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="Enter a word"
-            />
+        <Col md="3">
+          <Form onSubmit={handleSubmit} id="form">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label as="h4">分析する文章</Form.Label>
+              <Form.Control type="text" value={inputValue} onChange={handleInputChange} placeholder="文章を入力してください" />
+            </Form.Group>
+
             <Button variant="primary" type="submit">
-              Analyze
+              分析スタート!
             </Button>
-          </form>
+          </Form>
         </Col>
-        <Col md="6" className="mx-auto">
+        <Col md="6" className="mx-auto" id="graph">
           <h2>Word: {data.word}</h2>
           <h3>Emotions</h3>
           {allValuesAreZero ? (
@@ -132,7 +132,7 @@ const EmotionAnalyzer = () => {
                     },
                   ],
                 }}
-                options={{ maintainAspectRatio: true}}
+                options={{ maintainAspectRatio: true }}
               />
             </div>
           )}
