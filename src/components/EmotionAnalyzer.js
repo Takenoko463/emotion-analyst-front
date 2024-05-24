@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Pie } from "react-chartjs-2";
-import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
-import Button from 'react-bootstrap/Button'; // React BootstrapのButtonコンポーネントをインポート
+import "bootstrap/dist/css/bootstrap.min.css"; // BootstrapのCSSをインポート
+import Button from "react-bootstrap/Button"; // React BootstrapのButtonコンポーネントをインポート
 import "chart.js/auto"; // required for chart.js v3+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const EmotionAnalyzer = () => {
   const [word, setWord] = useState("悲しい");
@@ -94,38 +96,48 @@ const EmotionAnalyzer = () => {
 
   return (
     <div className="EmotionAnalyzer">
-      <h1 className="my-1">Emotion Analysis</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Enter a word"
-        />
-        <Button variant="primary" type="submit">Analyze</Button>
-      </form>
-      <h2>Word: {data.word}</h2>
-      <h3>Emotions</h3>
-      {allValuesAreZero ? (
-        <div>感情を特定できません</div>
-      ) : (
-        <div style={{ width: "300px", height: "300px" }}>
-          {" "}
-          {/* グラフのサイズを設定 */}
-          <Pie
-            data={{
-              labels: emotions.labels,
-              datasets: [
-                {
-                  data: emotions.data,
-                  backgroundColor: emotions.colors,
-                },
-              ],
-            }}
-            options={{ maintainAspectRatio: false }}
-          />
-        </div>
-      )}
+      <Row>
+        <h1 className="my-1 text-center">Emotion Analysis</h1>
+      </Row>
+      <Row>
+        <Col md="2">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              placeholder="Enter a word"
+            />
+            <Button variant="primary" type="submit">
+              Analyze
+            </Button>
+          </form>
+        </Col>
+        <Col md="6" className="mx-auto">
+          <h2>Word: {data.word}</h2>
+          <h3>Emotions</h3>
+          {allValuesAreZero ? (
+            <div>感情を特定できません</div>
+          ) : (
+            <div>
+              {" "}
+              {/* グラフのサイズを設定 */}
+              <Pie
+                data={{
+                  labels: emotions.labels,
+                  datasets: [
+                    {
+                      data: emotions.data,
+                      backgroundColor: emotions.colors,
+                    },
+                  ],
+                }}
+                options={{ maintainAspectRatio: true}}
+              />
+            </div>
+          )}
+        </Col>
+      </Row>
     </div>
   );
 };
